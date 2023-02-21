@@ -1,6 +1,7 @@
 #include "graph.h"
 #include "unionFind.h"
 #include <queue>
+#include <unordered_map>
 
 Graph::Graph()
 {
@@ -21,8 +22,8 @@ Graph Graph::CreateMST()
 {
 	Graph mst = Graph();
 	auto pq = priority_queue<edge, vector<edge>, greater<edge>>(this->mEdges.begin(), this->mEdges.end());
-	auto parent = map<int, int>();
-	auto rank = map<int, int>();
+	auto parent = unordered_map<int, int>();
+	auto rank = unordered_map<int, int>();
 	for (const auto &e : this->mEdges)
 	{
 		int a = e.second.first, b = e.second.second;

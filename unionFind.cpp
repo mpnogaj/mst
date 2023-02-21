@@ -1,6 +1,6 @@
 #include "unionFind.h"
 
-int findParent(int a, map<int, int> &parent)
+int findParent(int a, unordered_map<int, int> &parent)
 {
 	if (parent[a] == a)
 		return a;
@@ -9,7 +9,7 @@ int findParent(int a, map<int, int> &parent)
 	return root;
 }
 
-void unionSets(int a, int b, map<int, int> &parent, map<int, int> &rank)
+void unionSets(int a, int b, unordered_map<int, int> &parent, unordered_map<int, int> &rank)
 {
 	int rootA = findParent(a, parent), rootB = findParent(b, parent);
 	if (rootA == rootB)

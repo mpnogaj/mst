@@ -2,7 +2,7 @@
  * Plik pomocniczy zawierajacy implementacje niektorych funkcji na zbiorach rozlacznych
  */
 
-#include <map>
+#include <unordered_map>
 #pragma once
 
 using namespace std;
@@ -14,7 +14,7 @@ using namespace std;
  * @param parent tablica reprezentantow
  * @return int reprezentant
  */
-int findParent(int a, map<int, int> &parent);
+int findParent(int a, unordered_map<int, int> &parent);
 
 /**
  * @brief Laczy dwa zbiory do ktorych naleza a i b
@@ -24,4 +24,4 @@ int findParent(int a, map<int, int> &parent);
  * @param parent tablica reprezentantow
  * @param rank tablica rang zbiorow
  */
-void unionSets(int a, int b, map<int, int> &parent, map<int, int> &rank);
+void unionSets(int a, int b, unordered_map<int, int> &parent, unordered_map<int, int> &rank);
