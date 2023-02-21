@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Grafy dwudzielne: Dokumentacja pliku unionFind.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Grafy dwudzielne
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Szukaj','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funkcje</a>  </div>
+  <div class="headertitle">
+<div class="title">Dokumentacja pliku unionFind.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;map&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Wykres zależności załączania dla unionFind.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="unionFind_8h__incl.png" border="0" usemap="#aunionFind_8h" alt=""/></div>
+<map name="aunionFind_8h" id="aunionFind_8h">
+<area shape="rect" title=" " alt="" coords="5,5,103,32"/>
+<area shape="rect" title=" " alt="" coords="29,80,79,107"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Ten wykres pokazuje, które pliki bezpośrednio lub pośrednio załączają ten plik:</div>
+<div class="dyncontent">
+<div class="center"><img src="unionFind_8h__dep__incl.png" border="0" usemap="#aunionFind_8hdep" alt=""/></div>
+<map name="aunionFind_8hdep" id="aunionFind_8hdep">
+<area shape="rect" title=" " alt="" coords="61,5,159,32"/>
+<area shape="rect" href="graph_8cpp_source.html" title=" " alt="" coords="5,80,92,107"/>
+<area shape="rect" href="unionFind_8cpp_source.html" title=" " alt="" coords="117,80,229,107"/>
+</map>
+</div>
+</div>
+<p><a href="unionFind_8h_source.html">Idź do kodu źródłowego tego pliku.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funkcje</h2></td></tr>
+<tr class="memitem:afdf9433db59fdacc8d79b4e1aeb0bb51"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unionFind_8h.html#afdf9433db59fdacc8d79b4e1aeb0bb51">findParent</a> (int a, map&lt; int, int &gt; &amp;parent)</td></tr>
+<tr class="memdesc:afdf9433db59fdacc8d79b4e1aeb0bb51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Szuka reprezentanta zbioru do ktorego nalezy a.  <a href="unionFind_8h.html#afdf9433db59fdacc8d79b4e1aeb0bb51">Więcej...</a><br /></td></tr>
+<tr class="separator:afdf9433db59fdacc8d79b4e1aeb0bb51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e03b10077cd8445b1d06be9172b24ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unionFind_8h.html#a4e03b10077cd8445b1d06be9172b24ac">unionSets</a> (int a, int b, map&lt; int, int &gt; &amp;parent, map&lt; int, int &gt; &amp;rank)</td></tr>
+<tr class="memdesc:a4e03b10077cd8445b1d06be9172b24ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Laczy dwa zbiory do ktorych naleza a i b.  <a href="unionFind_8h.html#a4e03b10077cd8445b1d06be9172b24ac">Więcej...</a><br /></td></tr>
+<tr class="separator:a4e03b10077cd8445b1d06be9172b24ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
+<div class="textblock"><p>Plik pomocniczy zawierajacy implementacje niektorych funkcji na zbiorach rozlacznych </p>
+
+<p class="definition">Definicja w pliku <a class="el" href="unionFind_8h_source.html">unionFind.h</a>.</p>
+</div><h2 class="groupheader">Dokumentacja funkcji</h2>
+<a id="afdf9433db59fdacc8d79b4e1aeb0bb51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdf9433db59fdacc8d79b4e1aeb0bb51">&#9670;&nbsp;</a></span>findParent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int findParent </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">map&lt; int, int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>parent</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Szuka reprezentanta zbioru do ktorego nalezy a. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td></td></tr>
+    <tr><td class="paramname">parent</td><td>tablica reprezentantow </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>int reprezentant </dd></dl>
+
+<p class="definition">Definicja w linii <a class="el" href="unionFind_8cpp_source.html#l00003">3</a> pliku <a class="el" href="unionFind_8cpp_source.html">unionFind.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <span class="keywordflow">if</span> (parent[a] == a)</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;        <span class="keywordflow">return</span> a;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keywordtype">int</span> root = <a class="code" href="unionFind_8h.html#afdf9433db59fdacc8d79b4e1aeb0bb51">findParent</a>(parent[a], parent);</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    parent[a] = root;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keywordflow">return</span> root;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;}</div>
+<div class="ttc" id="aunionFind_8h_html_afdf9433db59fdacc8d79b4e1aeb0bb51"><div class="ttname"><a href="unionFind_8h.html#afdf9433db59fdacc8d79b4e1aeb0bb51">findParent</a></div><div class="ttdeci">int findParent(int a, map&lt; int, int &gt; &amp;parent)</div><div class="ttdoc">Szuka reprezentanta zbioru do ktorego nalezy a.</div><div class="ttdef"><b>Definition:</b> <a href="unionFind_8cpp_source.html#l00003">unionFind.cpp:3</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a4e03b10077cd8445b1d06be9172b24ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e03b10077cd8445b1d06be9172b24ac">&#9670;&nbsp;</a></span>unionSets()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void unionSets </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">map&lt; int, int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">map&lt; int, int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rank</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Laczy dwa zbiory do ktorych naleza a i b. </p>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td></td></tr>
+    <tr><td class="paramname">b</td><td></td></tr>
+    <tr><td class="paramname">parent</td><td>tablica reprezentantow </td></tr>
+    <tr><td class="paramname">rank</td><td>tablica rang zbiorow </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="unionFind_8cpp_source.html#l00012">12</a> pliku <a class="el" href="unionFind_8cpp_source.html">unionFind.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">int</span> rootA = <a class="code" href="unionFind_8h.html#afdf9433db59fdacc8d79b4e1aeb0bb51">findParent</a>(a, parent), rootB = <a class="code" href="unionFind_8h.html#afdf9433db59fdacc8d79b4e1aeb0bb51">findParent</a>(b, parent);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">if</span> (rootA == rootB)</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">int</span> rankA = rank[rootA], rankB = rank[rootB];</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">if</span>(rankA &lt;= rankB)</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        rank[rootB] += rankA;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        parent[rootA] = rootB;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        rank.erase(rootA);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    }</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        rank[rootA] += rankB;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        parent[rootB] = rootA;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        rank.erase(rootB);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano przez&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

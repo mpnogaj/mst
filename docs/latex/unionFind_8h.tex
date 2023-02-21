@@ -1,0 +1,114 @@
+\hypertarget{unionFind_8h}{}\doxysection{Dokumentacja pliku union\+Find.\+h}
+\label{unionFind_8h}\index{unionFind.h@{unionFind.h}}
+{\ttfamily \#include $<$map$>$}\newline
+Wykres zależności załączania dla union\+Find.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=153pt]{unionFind_8h__incl}
+\end{center}
+\end{figure}
+Ten wykres pokazuje, które pliki bezpośrednio lub pośrednio załączają ten plik\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{unionFind_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Funkcje}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{unionFind_8h_afdf9433db59fdacc8d79b4e1aeb0bb51}{find\+Parent}} (int a, map$<$ int, int $>$ \&parent)
+\begin{DoxyCompactList}\small\item\em Szuka reprezentanta zbioru do ktorego nalezy a. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{unionFind_8h_a4e03b10077cd8445b1d06be9172b24ac}{union\+Sets}} (int a, int b, map$<$ int, int $>$ \&parent, map$<$ int, int $>$ \&rank)
+\begin{DoxyCompactList}\small\item\em Laczy dwa zbiory do ktorych naleza a i b. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+Plik pomocniczy zawierajacy implementacje niektorych funkcji na zbiorach rozlacznych 
+
+\doxysubsection{Dokumentacja funkcji}
+\mbox{\Hypertarget{unionFind_8h_afdf9433db59fdacc8d79b4e1aeb0bb51}\label{unionFind_8h_afdf9433db59fdacc8d79b4e1aeb0bb51}} 
+\index{unionFind.h@{unionFind.h}!findParent@{findParent}}
+\index{findParent@{findParent}!unionFind.h@{unionFind.h}}
+\doxysubsubsection{\texorpdfstring{findParent()}{findParent()}}
+{\footnotesize\ttfamily int find\+Parent (\begin{DoxyParamCaption}\item[{int}]{a,  }\item[{map$<$ int, int $>$ \&}]{parent }\end{DoxyParamCaption})}
+
+
+
+Szuka reprezentanta zbioru do ktorego nalezy a. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em a} & \\
+\hline
+{\em parent} & tablica reprezentantow \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+int reprezentant 
+\end{DoxyReturn}
+
+
+Definicja w linii 3 pliku union\+Find.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{4 \{}
+\DoxyCodeLine{5     \textcolor{keywordflow}{if} (parent[a] == a)}
+\DoxyCodeLine{6         \textcolor{keywordflow}{return} a;}
+\DoxyCodeLine{7     \textcolor{keywordtype}{int} root = \mbox{\hyperlink{unionFind_8h_afdf9433db59fdacc8d79b4e1aeb0bb51}{findParent}}(parent[a], parent);}
+\DoxyCodeLine{8     parent[a] = root;}
+\DoxyCodeLine{9     \textcolor{keywordflow}{return} root;}
+\DoxyCodeLine{10 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{unionFind_8h_a4e03b10077cd8445b1d06be9172b24ac}\label{unionFind_8h_a4e03b10077cd8445b1d06be9172b24ac}} 
+\index{unionFind.h@{unionFind.h}!unionSets@{unionSets}}
+\index{unionSets@{unionSets}!unionFind.h@{unionFind.h}}
+\doxysubsubsection{\texorpdfstring{unionSets()}{unionSets()}}
+{\footnotesize\ttfamily void union\+Sets (\begin{DoxyParamCaption}\item[{int}]{a,  }\item[{int}]{b,  }\item[{map$<$ int, int $>$ \&}]{parent,  }\item[{map$<$ int, int $>$ \&}]{rank }\end{DoxyParamCaption})}
+
+
+
+Laczy dwa zbiory do ktorych naleza a i b. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em a} & \\
+\hline
+{\em b} & \\
+\hline
+{\em parent} & tablica reprezentantow \\
+\hline
+{\em rank} & tablica rang zbiorow \\
+\hline
+\end{DoxyParams}
+
+
+Definicja w linii 12 pliku union\+Find.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{13 \{}
+\DoxyCodeLine{14     \textcolor{keywordtype}{int} rootA = \mbox{\hyperlink{unionFind_8h_afdf9433db59fdacc8d79b4e1aeb0bb51}{findParent}}(a, parent), rootB = \mbox{\hyperlink{unionFind_8h_afdf9433db59fdacc8d79b4e1aeb0bb51}{findParent}}(b, parent);}
+\DoxyCodeLine{15     \textcolor{keywordflow}{if} (rootA == rootB)}
+\DoxyCodeLine{16         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{17     \textcolor{keywordtype}{int} rankA = rank[rootA], rankB = rank[rootB];}
+\DoxyCodeLine{18     \textcolor{keywordflow}{if}(rankA <= rankB)}
+\DoxyCodeLine{19     \{}
+\DoxyCodeLine{20         rank[rootB] += rankA;}
+\DoxyCodeLine{21         parent[rootA] = rootB;}
+\DoxyCodeLine{22         rank.erase(rootA);}
+\DoxyCodeLine{23     \}}
+\DoxyCodeLine{24     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{25     \{}
+\DoxyCodeLine{26         rank[rootA] += rankB;}
+\DoxyCodeLine{27         parent[rootB] = rootA;}
+\DoxyCodeLine{28         rank.erase(rootB);}
+\DoxyCodeLine{29     \}}
+\DoxyCodeLine{30 \}}
+
+\end{DoxyCode}

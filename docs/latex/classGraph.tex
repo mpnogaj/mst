@@ -1,0 +1,148 @@
+\hypertarget{classGraph}{}\doxysection{Dokumentacja klasy Graph}
+\label{classGraph}\index{Graph@{Graph}}
+
+
+Klasa przechowujaca graf.  
+
+
+
+
+{\ttfamily \#include $<$graph.\+h$>$}
+
+\doxysubsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGraph_ad0a9817e4d4ddbed1b41e43fbdd52d55}{Add\+Edge}} (int a, int b, double w)
+\begin{DoxyCompactList}\small\item\em Funkcja dodajaca krawedz pomiedzy dwoma wierzcholkami. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGraph}{Graph}} \mbox{\hyperlink{classGraph_a2550549dfe9a8bc4ed1efba2002cc188}{Create\+MST}} ()
+\begin{DoxyCompactList}\small\item\em Tworzy MST z grafu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGraph_a7407e34ad71d3b7cf7a93201daddc528}{Print\+Graph}} (ostream \&output\+Stream)
+\begin{DoxyCompactList}\small\item\em Wypisz graf na strumien wyjsciowy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Opis szczegółowy}
+Klasa przechowujaca graf. 
+
+Definicja w linii 13 pliku graph.\+h.
+
+
+
+\doxysubsection{Dokumentacja funkcji składowych}
+\mbox{\Hypertarget{classGraph_ad0a9817e4d4ddbed1b41e43fbdd52d55}\label{classGraph_ad0a9817e4d4ddbed1b41e43fbdd52d55}} 
+\index{Graph@{Graph}!AddEdge@{AddEdge}}
+\index{AddEdge@{AddEdge}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{AddEdge()}{AddEdge()}}
+{\footnotesize\ttfamily void Graph\+::\+Add\+Edge (\begin{DoxyParamCaption}\item[{int}]{a,  }\item[{int}]{b,  }\item[{double}]{w }\end{DoxyParamCaption})}
+
+
+
+Funkcja dodajaca krawedz pomiedzy dwoma wierzcholkami. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em a} & pierwszy wierzcholek \\
+\hline
+{\em b} & drugi wierzcholek \\
+\hline
+\end{DoxyParams}
+
+
+Definicja w linii 15 pliku graph.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{16 \{}
+\DoxyCodeLine{17     this-\/>mEdges.push\_back(\{w, \{a, b\}\});}
+\DoxyCodeLine{18 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGraph_a2550549dfe9a8bc4ed1efba2002cc188}\label{classGraph_a2550549dfe9a8bc4ed1efba2002cc188}} 
+\index{Graph@{Graph}!CreateMST@{CreateMST}}
+\index{CreateMST@{CreateMST}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{CreateMST()}{CreateMST()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGraph}{Graph}} Graph\+::\+Create\+MST (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Tworzy MST z grafu. 
+
+\begin{DoxyReturn}{Zwraca}
+\mbox{\hyperlink{classGraph}{Graph}} MST 
+\end{DoxyReturn}
+
+
+Definicja w linii 20 pliku graph.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{21 \{}
+\DoxyCodeLine{22     \mbox{\hyperlink{classGraph}{Graph}} mst = \mbox{\hyperlink{classGraph}{Graph}}();}
+\DoxyCodeLine{23     \textcolor{keyword}{auto} pq = priority\_queue<edge, vector<edge>, greater<edge>>(this-\/>mEdges.begin(), this-\/>mEdges.end());}
+\DoxyCodeLine{24     \textcolor{keyword}{auto} parent = map<int, int>();}
+\DoxyCodeLine{25     \textcolor{keyword}{auto} rank = map<int, int>();}
+\DoxyCodeLine{26     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto} \&e : this-\/>mEdges)}
+\DoxyCodeLine{27     \{}
+\DoxyCodeLine{28         \textcolor{keywordtype}{int} a = e.second.first, b = e.second.second;}
+\DoxyCodeLine{29         parent[a] = a;}
+\DoxyCodeLine{30         parent[b] = b;}
+\DoxyCodeLine{31         rank[a] = 1;}
+\DoxyCodeLine{32         rank[b] = 1;}
+\DoxyCodeLine{33     \}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     \textcolor{keywordtype}{int} n = parent.size();}
+\DoxyCodeLine{36     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < n -\/ 1; )}
+\DoxyCodeLine{37     \{}
+\DoxyCodeLine{38         edge e = pq.top();}
+\DoxyCodeLine{39         pq.pop();}
+\DoxyCodeLine{40         \textcolor{keywordtype}{int} a = e.second.first, b = e.second.second;}
+\DoxyCodeLine{41         \textcolor{keywordflow}{if}(\mbox{\hyperlink{unionFind_8h_afdf9433db59fdacc8d79b4e1aeb0bb51}{findParent}}(a, parent) == \mbox{\hyperlink{unionFind_8h_afdf9433db59fdacc8d79b4e1aeb0bb51}{findParent}}(b, parent))}
+\DoxyCodeLine{42             \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{43         mst.\mbox{\hyperlink{classGraph_ad0a9817e4d4ddbed1b41e43fbdd52d55}{AddEdge}}(a, b, e.first);}
+\DoxyCodeLine{44         \mbox{\hyperlink{unionFind_8h_a4e03b10077cd8445b1d06be9172b24ac}{unionSets}}(a, b, parent, rank);}
+\DoxyCodeLine{45         i++;}
+\DoxyCodeLine{46     \}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48     \textcolor{keywordflow}{return} mst;}
+\DoxyCodeLine{49 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classGraph_a7407e34ad71d3b7cf7a93201daddc528}\label{classGraph_a7407e34ad71d3b7cf7a93201daddc528}} 
+\index{Graph@{Graph}!PrintGraph@{PrintGraph}}
+\index{PrintGraph@{PrintGraph}!Graph@{Graph}}
+\doxysubsubsection{\texorpdfstring{PrintGraph()}{PrintGraph()}}
+{\footnotesize\ttfamily void Graph\+::\+Print\+Graph (\begin{DoxyParamCaption}\item[{ostream \&}]{output\+Stream }\end{DoxyParamCaption})}
+
+
+
+Wypisz graf na strumien wyjsciowy. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em output\+Stream} & strumien wyjsciowy na ktory nalezy wypisac graf \\
+\hline
+\end{DoxyParams}
+
+
+Definicja w linii 51 pliku graph.\+cpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{52 \{}
+\DoxyCodeLine{53     \textcolor{keywordtype}{bool} fr = \textcolor{keyword}{false};}
+\DoxyCodeLine{54     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto} \&e : this-\/>mEdges)}
+\DoxyCodeLine{55     \{}
+\DoxyCodeLine{56         \textcolor{keywordflow}{if} (fr)}
+\DoxyCodeLine{57             outputStream << \textcolor{stringliteral}{"{}, "{}};}
+\DoxyCodeLine{58         outputStream << \textcolor{stringliteral}{"{}("{}} << e.second.first << \textcolor{stringliteral}{"{}, "{}} << e.second.second << \textcolor{stringliteral}{"{}, "{}} << e.first << \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{59         fr = \textcolor{keyword}{true};}
+\DoxyCodeLine{60     \}}
+\DoxyCodeLine{61     outputStream << endl;}
+\DoxyCodeLine{62 \}}
+
+\end{DoxyCode}
+
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
+\item 
+graph.\+h\item 
+graph.\+cpp\end{DoxyCompactItemize}
